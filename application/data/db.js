@@ -1,12 +1,6 @@
 import mysql from "mysql2/promise";
 
 export async function query({ query, values = [] }) {
-  // PlanetScale;
-  // const dbconnection = await mysql.createConnection(
-  //   process.env.MYSQL_DATABASE_URL
-  // );
-
-  //Digital ocean ubuntu
   const dbconnection = await mysql.createConnection({
     host: process.env.MYSQL_HOST,
     port: process.env.MYSQL_PORT,

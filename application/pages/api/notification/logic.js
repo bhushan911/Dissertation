@@ -1,11 +1,3 @@
-// import {
-//   fetchUserData,
-//   fetchProductData,
-//   extractUserInterests,
-//   getRandomProducts,
-//   sendNotification,
-// } from "../../../app/notify/newlogic";
-
 async function fetchUserData() {
   try {
     const response = await fetch("http://localhost:3000/api/notification/user");
@@ -75,6 +67,7 @@ async function sendNotification(data) {
   }
 }
 
+// Call the function to start processing notification data and sending emails
 async function processNotificationDataAndSendEmails() {
   try {
     const userData = await fetchUserData();
@@ -133,42 +126,6 @@ async function processNotificationDataAndSendEmails() {
     return { success: false, message: "Internal Server Error" };
   }
 }
-
-// Call the function to start processing notification data and sending emails
-// processNotificationDataAndSendEmails();
-
-// async function handler(req, res) {
-//   if (req.method === "GET") {
-//     try {
-//       // Fetch and process data
-//       processNotificationDataAndSendEmails();
-
-//       // Construct the JSON response
-//       const jsonResponse = {
-//         status: "success",
-//         message: "Notifications processed and emails sent successfully.",
-//       };
-
-//       // Send the JSON response as the API response with 200 status code
-//       res.status(200).json(jsonResponse);
-//     } catch (error) {
-//       console.error("Error processing notifications:", error);
-//       // If there's an error, send a JSON response with 500 status code
-//       const errorResponse = {
-//         status: "error",
-//         message: "Internal Server Error",
-//       };
-//       res.status(500).json(errorResponse);
-//     }
-//   } else {
-//     // For other HTTP methods, return a JSON response with 405 status code
-//     const errorResponse = {
-//       status: "error",
-//       message: "Method Not Allowed",
-//     };
-//     res.status(405).json(errorResponse);
-//   }
-// }
 
 export default async function handler(req, res) {
   if (req.method === "GET") {

@@ -48,35 +48,6 @@ const InterestModal = ({ show, onHide, onSave }) => {
   };
 
   return (
-    // <Modal show={show} onHide={onHide} centered>
-    //   <Modal.Header closeButton>
-    //     <Modal.Title>Select Interests</Modal.Title>
-    //   </Modal.Header>
-    //   <Modal.Body>
-    //     {interestsData.map((interest) => (
-    //       <Button
-    //         key={interest}
-    //         variant={
-    //           selectedInterests.includes(interest)
-    //             ? "primary"
-    //             : "outline-primary"
-    //         }
-    //         onClick={() => handleInterestClick(interest)}
-    //         style={{ margin: "5px" }}
-    //       >
-    //         {interest}
-    //       </Button>
-    //     ))}
-    //   </Modal.Body>
-    //   <Modal.Footer>
-    //     <Button variant="secondary" onClick={onHide}>
-    //       Close
-    //     </Button>
-    //     <Button variant="primary" onClick={handleSave}>
-    //       Save Interests
-    //     </Button>
-    //   </Modal.Footer>
-    // </Modal>
     <Modal show={show} onHide={onHide} centered>
       <Modal.Header closeButton>
         <Modal.Title>Select Interests</Modal.Title>

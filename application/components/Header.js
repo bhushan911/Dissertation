@@ -17,33 +17,6 @@ function Header() {
     userEmail = session.user.email;
   }
 
-  // useEffect(() => {
-  //   // Show the modal after 20 seconds
-  //   const timer = setTimeout(() => {
-  //     setShowModal(true);
-  //   }, 5000);
-
-  //   // Clear the timer when the component unmounts
-  //   return () => clearTimeout(timer);
-  // }, []);
-
-  // useEffect(() => {
-  //   // Check if the modal has been shown before
-  //   const modalShownBefore = localStorage.getItem("modalShown");
-  //   console.log("Modal shown before:", modalShownBefore);
-
-  //   // If the user is logged in and the modal hasn't been shown before, show the modal
-  //   if (session && !modalShownBefore) {
-  //     const timer = setTimeout(() => {
-  //       setShowModal(true);
-  //     }, 5000);
-  //     // return () => clearTimeout(timer);
-
-  //     // Mark the modal as shown in localStorage
-  //     localStorage.setItem("modalShown", "true");
-  //   }
-  // }, [session]);
-
   useEffect(() => {
     // Check if the modal has been shown before in sessionStorage
     const modalShownBefore = sessionStorage.getItem("modalShown");
