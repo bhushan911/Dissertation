@@ -44,7 +44,6 @@ export default NextAuth({
   pages: {
     signIn: "/auth/loginscreen",
     signOut: "/auth/loginscreen",
-    newUser: "/auth/registrationscreen",
   },
 
   callbacks: {

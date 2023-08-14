@@ -1,4 +1,5 @@
 import { query } from "../../../data/db";
+import bcrypt from "bcrypt";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -13,8 +14,19 @@ export default async function handler(req, res) {
 
       if (userData.length > 0) {
         const user = userData[0];
-        if (password === user.password) {
-          // If the email and password match, return the user object
+        const hashedPassword = user.password;
+        const passwordMatch = await bcrypt.compare(password, hashedPassword);
+
+        // if (password === user.password) {
+        //   // If the email and password match, return the user object
+        //   return res.status(200).json({
+        //     userid: user.userid,
+        //     firstname: user.firstname,
+        //     lastname: user.lastname,
+        //     email: user.email,
+        //   });
+        // }
+        if (passwordMatch) {
           return res.status(200).json({
             userid: user.userid,
             firstname: user.firstname,

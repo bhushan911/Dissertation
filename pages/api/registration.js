@@ -1,5 +1,5 @@
 import { query } from "../../data/db";
-import { redirect } from "next/navigation";
+import bcrypt from "bcrypt";
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
@@ -26,6 +26,7 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: "Email already registered" });
       }
 
+      const hashedPassword = await bcrypt.hash(userdetails.password, 10);
       await query({
         query: "INSERT INTO user_interest (email) VALUES (?)",
         values: [userdetails.email],
@@ -39,7 +40,8 @@ export default async function handler(req, res) {
           userdetails.email,
           userdetails.age,
           userdetails.gender,
-          userdetails.password,
+          //userdetails.password,
+          hashedPassword,
         ],
       });
 

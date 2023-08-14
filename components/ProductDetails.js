@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function ProductDetails({ product }) {
   const productData = product[0]; // Access the first object inside the 'product' array
-
+  // console.log(productData);
   if (!productData) {
     return <div>Loading...</div>;
   }

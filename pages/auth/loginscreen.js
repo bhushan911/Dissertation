@@ -26,7 +26,7 @@ function LoginScreen() {
       callbackUrl: "/",
     });
 
-    console.log(result);
+    console.log(`email:${email} password: ${password}`);
     if (result?.error) {
       // If there is an error, display it to the user
       window.alert("Login failed: " + result.error);

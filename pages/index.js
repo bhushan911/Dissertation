@@ -8,7 +8,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Carousel from "react-bootstrap/Carousel";
 import DataFetcher from "../components/DataFetcher";
-import NotificationUserData from "../app/notify/testlogic";
 export default function Home() {
   const { data: session } = useSession();
   // console.log(data);

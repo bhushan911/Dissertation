@@ -13,6 +13,7 @@ function DataFetcher({ queryParam }) {
         `http://localhost:3000/api/category/${queryParam}`
       );
       const result = await response.json();
+      // console.log(result);
       setData(result.products);
       setIsLoading(false);
     } catch (error) {
@@ -38,7 +39,7 @@ function DataFetcher({ queryParam }) {
   const currentItems = data.slice(firstIndex, lastIndex);
 
   return (
-    <div>
+    <div className="container-fluid">
       <div className="row">
         {currentItems.map((item) => (
           <div key={item.sku} className="col-md-3 mb-3 ">

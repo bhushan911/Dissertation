@@ -22,6 +22,8 @@ function ProductItem({
     setLiked((prevLiked) => !prevLiked);
   };
 
+  // console.log(id, imageUrl, title, price, desc, producturl, angleImage);
+
   return (
     <div>
       <Card
