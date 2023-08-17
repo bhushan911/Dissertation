@@ -71,6 +71,8 @@ To start the application for development and testing purposes, run one of the fo
 npm run dev
 ```
 
+OR
+
 ```
 npm start
 ```
