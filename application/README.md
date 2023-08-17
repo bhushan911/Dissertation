@@ -1,82 +1,74 @@
-Absolutely, here's your README file content organized and formatted with proper Markdown syntax:
+This is a readme file which has steps to be followed to setup development environment, dependencies, and run the project.
 
-# Project Setup Guide
+STEP 1
 
-Follow these steps to set up the development environment, install dependencies, and run the project.
+Software to be installed
 
-## Step 1: Software Installation
+Download and setup Nodejs on your machine - https://nodejs.org/en/download
 
-1. Download and setup Node.js on your machine from [nodejs.org](https://nodejs.org/en/download).
-2. Download and install MySQL Server from [dev.mysql.com](https://dev.mysql.com/downloads/mysql/).
-3. Optionally, install MySQL Workbench from [dev.mysql.com](https://dev.mysql.com/downloads/workbench/).
-4. Install a code editor of your choice (e.g., [Visual Studio Code](https://code.visualstudio.com/download), [Atom](https://atom.io/)).
-5. Optionally, install Git from [git-scm.com](https://git-scm.com/downloads) and configure it with your user account details.
+Download and install MySQL Server - https://dev.mysql.com/downloads/mysql/
 
-## Step 2: Project Setup
+MYSQL Workbench(optional) - https://dev.mysql.com/downloads/workbench/
 
-1. Download the project ZIP file from University Myplace and extract it to your preferred location.
-   OR
-   Clone the project using the following command:
-   ```
-   git clone https://github.com/bhushan911/Dissertation.git
-   ```
+Code Editor (Vscode, Atom, etc) - https://code.visualstudio.com/download
 
-## Step 3: Database Setup
+Git (optional) - https://git-scm.com/downloads
+You will have to configure git for the first time like setting up user account details git local file.
 
-1. Setup the MySQL server and create a connection using MySQL Workbench (or any preferred client).
-2. Import the database by following these steps:
-   - In the Server tab, click Data Import.
-   - Specify the path of the dump folder (contains the database) by clicking "..." and click OK.
-   - Navigate to your MySQL backup file, select the backup, and click OK.
-   - The schema names should appear on the left-hand side, select the schemas to be restored.
-   - Click "Import Progress" and Start Import on the bottom right.
-   - If you still face any issues you can follow below link to import data on mysql server [workbench.org](https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-management.html)
+Step 2
 
-## Step 4: Dependency Installation
+Download the zip code file from myplace and extract the zip folder in a preferred location or clone the project using below github url
 
-1. Open a terminal and navigate to the project directory:
-   ```
-   cd "path/to/application"
-   ```
-2. Install npm dependencies using the following command:
-   ```
-   npm install
-   ```
+command - git clone https://github.com/bhushan911/Dissertation.git
 
-## Step 5: Configuration
+Step 3
 
-1. Create a `.env.local` file in the parent folder of the project directory.
-2. Configure the `.env.local` file as follows:
+Setup the SQL server and create a connection using MySQL workbench.
+//sample sql connection
+//port:3306
+//host= 127.0.0.1
+//user= xyz
+//password= xyz
 
-```
-# Database Connection
-MYSQL_HOST=127.0.0.1
-MYSQL_PORT=3306
-MYSQL_DATABASE=offers
-MYSQL_USER="xyz"
-MYSQL_PASSWORD="xyz"
+Once the SQL connection is established you can import the database from /database/dump folder. Follow below steps to import the database using SQL workbench.
+Step 1: In the tab Server click Data Import
+Step 2 : You will see a link to the default dump folder. Specify the path of the dump folder (which contains our database) by clicking "..." and click OK.
+Step 3 : Click the database and navigate to where your MySQL backup file is located, select the backup you want to load, and click OK.
+Step 4 : The schema names in your dump should appear on the left-hand side, at the bottom. Select the schemas that need to be restored.
+Step 5 : Click on "Import Progress" and Select Start Import on the bottom right.
 
-# Nodemailer Configuration
-NODEMAILER_EMAIL=test@test.com
-NODEMAILER_PW=xyz
-```
+This will import the offers database on your local machine. If you still face any issues you can follow below link to import data on mysql server.
 
-Make sure to replace `"xyz"` with your actual MySQL user and password, and provide valid Nodemailer email credentials.
+https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-management.html
 
-## Step 6: Start the Application
+Step 4
 
-To start the application for development and testing purposes, run the following command in the terminal:
+Open a terminal and change the path to project directory.
+e.g : cd "xyz/Notify-offers"
 
-```
-npm run dev
-```
+Install npm dependencies using package.json using below command. Make sure to install all the dependencies.
+npm install package.json
 
+Step 5
+
+Create an ".env.local" file in parent folder of project directory. Configure the .env.local file as given below.
+
+//Database connection
+MYSQL_HOST= 127.0.0.1
+MYSQL_PORT= 3306
+MYSQL_DATABASE= offers
+MYSQL_USER= "xyz"
+MYSQL_PASSWORD= "xyz"
+
+//Nodemailer configuration
+NODEMAILER_EMAIL = 'test@test.com' //User email which will be used to send email
+NODEMAILER_PW = 'xyz' //User password
+
+The user email account should be setup to send email using nodemailer. If you are using gmail, make sure to Enable 2-Step Verification and use app password to send emails.
+
+Step 6
+Start the application using below command from terminal
+
+command: npm run dev //command to start the server for development and testing purpose
 OR
-
-```
-npm start
-```
-
-That's it! Your application should now be up and running.
-
-Remember that this guide assumes a basic understanding of software development and command-line usage. If you encounter any issues during setup, refer to the documentation of the tools used or seek further assistance online.
+commnad: npm start
